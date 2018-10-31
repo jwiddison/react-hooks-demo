@@ -28,8 +28,6 @@ export default function Hooks(props) {
   );
 }
 
-// NOTE: DON'T LOOK AT THIS YET PEOPLE!!
-
 // const firstName = useFormInput("Jordan");
 // const lastName = useFormInput("Widdison");
 
