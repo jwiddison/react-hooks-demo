@@ -3,20 +3,39 @@
 }
 
 body {
-  margin: 0;
-  padding: 0;
+  align-items: center;
   background-color: #233246;
   display: flex;
   justify-content: center;
-  align-items: center;
+  margin: 0;
   min-height: 100vh;
+  padding: 0;
 }
 
 section {
   background-color: white;
-  min-width: 300px;
-  min-height: 300px;
   border-radius: 10px;
-  padding: 20px;
   margin-top: 50px;
+  min-height: 300px;
+  min-width: 300px;
+  padding: 20px;
+}
+
+label {
+  display: block;
+}
+
+input {
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  border-radius: 4px;
+  box-shadow: none;
+  color: rgba(0, 0, 0, 0.87);
+  margin-left: 10px;
+  max-width: 100%;
+  outline: 0;
+  padding: 0.7em 1em;
+}
+
+input:focus {
+  border-color: #0081ff;
 }

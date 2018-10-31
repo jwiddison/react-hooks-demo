@@ -1,7 +1,63 @@
 import React, { useState } from "react";
 
 export default function Hooks(props) {
-  const name = "asdf";
+  const [firstName, setFirstName] = useState("Jordan");
+  const [lastName, setLastName] = useState("Widdison");
 
-  return <section>Test</section>;
+  function handleChangeFirstName(e) {
+    setFirstName(e.target.value);
+  }
+
+  function handleChangeLastName(e) {
+    setLastName(e.target.value);
+  }
+
+  return (
+    <section>
+      <h1>Demo With Hooks</h1>
+      <label>
+        First Name
+        <input value={firstName} onChange={handleChangeFirstName} />
+      </label>
+      <br />
+      <label>
+        Last Name
+        <input value={lastName} onChange={handleChangeLastName} />
+      </label>
+    </section>
+  );
 }
+
+// NOTE: DON'T LOOK AT THIS YET PEOPLE!!
+
+// const firstName = useFormInput("Jordan");
+// const lastName = useFormInput("Widdison");
+
+// function useFormInput(initialValue) {
+//   const [value, setValue] = useState(initialValue);
+//
+//   function handleChange(e) {
+//     setValue(e.target.value);
+//   }
+//
+//   return {
+//     value,
+//     onChange: handleChange
+//   };
+// }
+//
+//
+// return (
+//   <section>
+//     <h1>Demo With Hooks</h1>
+//     <label>
+//       First Name
+//       <input {...firstName} />
+//     </label>
+//     <br />
+//     <label>
+//       Last Name
+//       <input {...lastName} />
+//     </label>
+//   </section>
+// );
