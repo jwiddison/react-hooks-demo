@@ -5,8 +5,8 @@ class NoHooks extends Component {
     super(props);
 
     this.state = {
-      firstName: "Jordan",
-      lastName: "Widdison"
+      firstName: "Harry",
+      lastName: "Potter"
     };
 
     this.handleChangeFirstName = this.handleChangeFirstName.bind(this);

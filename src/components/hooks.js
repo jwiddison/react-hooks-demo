@@ -1,32 +1,84 @@
 import React, { useState } from "react";
 
 export default function Hooks(props) {
-  const [firstName, setFirstName] = useState("Jordan");
-  const [lastName, setLastName] = useState("Widdison");
-
-  function handleChangeFirstName(e) {
-    setFirstName(e.target.value);
-  }
-
-  function handleChangeLastName(e) {
-    setLastName(e.target.value);
-  }
+  // TODO: USE HOOKS!
 
   return (
     <section>
       <h1>Demo With Hooks</h1>
       <label>
         First Name
-        <input value={firstName} onChange={handleChangeFirstName} />
+        <input />
       </label>
       <br />
       <label>
         Last Name
-        <input value={lastName} onChange={handleChangeLastName} />
+        <input />
       </label>
     </section>
   );
 }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+// const [firstName, setFirstName] = useState("Jordan");
+// const [lastName, setLastName] = useState("Widdison");
+//
+// function handleChangeFirstName(e) {
+//   setFirstName(e.target.value);
+// }
+//
+// function handleChangeLastName(e) {
+//   setLastName(e.target.value);
+// }
 
 // const firstName = useFormInput("Jordan");
 // const lastName = useFormInput("Widdison");
