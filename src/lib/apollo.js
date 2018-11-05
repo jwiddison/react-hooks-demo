@@ -14,7 +14,7 @@ function getUser(id) {
   return { firstName: '', lastName: '' };
 }
 
-class Query {
+class QueryClass {
   constructor(id) {
     this.id = id;
     this.loading = true;
@@ -31,6 +31,7 @@ class Query {
           window.localStorage.setItem(`user-${this.id}`, user);
         }
         this.data = { user: JSON.parse(user) };
+        console.log('user-query', this.data.user);
         resolve(this);
       }, 2000);
     });
@@ -45,7 +46,7 @@ class Query {
   }
 }
 
-class Mutation {
+class MutationClass {
   constructor(variables) {
     this.variables = variables;
   }
@@ -56,6 +57,7 @@ class Mutation {
     window.setTimeout(() => {
       this.loading = false;
       const user = { ...this.variables, ...value };
+      console.log('user-mutate', user);
       window.localStorage.setItem(`user-${user.id}`, JSON.stringify(user));
       this.data = { user };
       this.setResult(this.getResult());
@@ -74,7 +76,7 @@ export function useQuery({ variables }) {
   const [result, setResult] = useState({});
   let query = queries[variables.id];
   if (!query) {
-    query = new Query(variables.id);
+    query = new QueryClass(variables.id);
     queries[variables.id] = query;
   }
 
@@ -86,10 +88,19 @@ export function useQuery({ variables }) {
 }
 
 export function useMutation({ variables }) {
-  const mutation = useMemo(() => new Mutation(variables), [variables.id]);
+  const mutation = useMemo(() => new MutationClass(variables), [variables.id]);
   const [result, setResult] = useState(mutation.getResult());
 
   mutation.setResult = setResult;
 
   return [(...args) => mutation.mutate(...args), result];
+}
+
+export function Query({ children, ...props }) {
+  return children(useQuery(props));
+}
+
+export function Mutation({ children, ...props }) {
+  const [mutate, result] = useMutation(props);
+  return children(mutate, result);
 }
