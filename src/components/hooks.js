@@ -19,70 +19,42 @@ export default function Hooks(props) {
   );
 }
 
+// --------------------
+// Using the useState hook:
+// --------------------
 //
+// export default function Hooks(props) {
+//   const [firstName, setFirstName] = useState("Harry");
+//   const [lastName, setLastName] = useState("Potter");
 //
+//   function handleChangeFirstName(e) {
+//     setFirstName(e.target.value);
+//   }
 //
+//   function handleChangeLastName(e) {
+//     setLastName(e.target.value);
+//   }
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-// const [firstName, setFirstName] = useState("Jordan");
-// const [lastName, setLastName] = useState("Widdison");
-//
-// function handleChangeFirstName(e) {
-//   setFirstName(e.target.value);
+//   return (
+//     <section>
+//       <h1>Demo With Hooks</h1>
+//       <label>
+//         First Name
+//         <input value={firstName} onChange={handleChangeFirstName} />
+//       </label>
+//       <br />
+//       <label>
+//         Last Name
+//         <input value={lastName} onChange={handleChangeLastName} />
+//       </label>
+//     </section>
+//   );
 // }
 //
-// function handleChangeLastName(e) {
-//   setLastName(e.target.value);
-// }
-
-// const firstName = useFormInput("Jordan");
-// const lastName = useFormInput("Widdison");
-
+// --------------------
+// Using custom hooks:
+// --------------------
+//
 // function useFormInput(initialValue) {
 //   const [value, setValue] = useState(initialValue);
 //
@@ -96,18 +68,22 @@ export default function Hooks(props) {
 //   };
 // }
 //
+// export default function Hooks(props) {
+//   const firstName = useFormInput("Harry");
+//   const lastName = useFormInput("Potter");
 //
-// return (
-//   <section>
-//     <h1>Demo With Hooks</h1>
-//     <label>
-//       First Name
-//       <input {...firstName} />
-//     </label>
-//     <br />
-//     <label>
-//       Last Name
-//       <input {...lastName} />
-//     </label>
-//   </section>
-// );
+//   return (
+//     <section>
+//       <h1>Demo With Hooks</h1>
+//       <label>
+//         First Name
+//         <input {...firstName} />
+//       </label>
+//       <br />
+//       <label>
+//         Last Name
+//         <input {...lastName} />
+//       </label>
+//     </section>
+//   );
+// }
