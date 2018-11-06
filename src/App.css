@@ -25,6 +25,11 @@ label {
   display: block;
 }
 
+label > span {
+  display: inline-block;
+  min-width: 78px;
+}
+
 input {
   border: 1px solid rgba(34, 36, 38, 0.15);
   border-radius: 4px;
@@ -38,4 +43,58 @@ input {
 
 input:focus {
   border-color: #0081ff;
+}
+
+input.loading {
+  color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+input.fade-in {
+  animation-duration: 250ms;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-name: fade-in;
+  animation-timing-function: linear;
+}
+
+.button-wrapper {
+  width: 100%;
+  text-align: right;
+  margin-top: 12px;
+}
+
+.loading {
+  background: #f6f7f8;
+  background-image: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+  background-repeat: no-repeat;
+  background-size: 800px 104px;
+
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeholderShimmer;
+  animation-timing-function: linear;
+}
+
+@keyframes placeholderShimmer {
+  0% {
+    background-position: -468px 0;
+  }
+
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    background-color: #f6f7f8;
+    color: rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    background-color: white;
+    color: rgba(0, 0, 0, 0.87);
+  }
 }
