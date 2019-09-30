@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 export default function Hooks(props) {
   // TODO: USE HOOKS!
@@ -17,7 +17,7 @@ export default function Hooks(props) {
       </label>
     </section>
   );
-}
+};
 
 // --------------------
 // Using the useState hook:
