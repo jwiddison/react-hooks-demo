@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Hooks(props) {
+export const Hooks = _props => {
   // TODO: USE HOOKS!
 
   return (
